@@ -1,0 +1,46 @@
+$themecolor: rgb(236, 69, 97);
+
+//Utility classes
+.container-pad {
+    padding: 0 20px 0 20px;
+}
+
+h2.name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+span {
+    font-size: 19px;
+    color: rgb(83, 78, 78);
+    font-family: 'Jost', sans-serif;
+}
+
+//Mixins
+@mixin styledInput {
+    margin: 10px 0;
+    background: rgb(238, 232, 235);
+    border: none;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+}
+
+@mixin imgcover($size) {
+    .img-cover {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+    
+        &>img.profile-photo {
+            width: $size;
+            height: $size;
+            border-radius: inherit;
+        }
+    }
+}
+
+@mixin centerize() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
