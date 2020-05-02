@@ -86,7 +86,7 @@ header {
 
 .socials {
 
-    width: calc(100% - 40px);
+    width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-evenly;
@@ -116,7 +116,7 @@ header {
 }
 
 .contact {
-    width: calc(100% - 40px);
+    width: 100%;
     height: 40vh;
 
     &>form {
@@ -181,7 +181,7 @@ header {
         }
     }
     .bottom-box {
-        width: calc(100% - 40px);
+        width: 100%;
         
         height: 50%;
         display: flex;
@@ -237,3 +237,9 @@ header {
         }
     }
 }
+
+.desktop-cover {
+    display: none;
+}
+
+@import 'desktop';
