@@ -51,15 +51,14 @@ header .intro .img-cover {
 }
 
 header .intro .img-cover > img.profile-photo {
-  width: 90px;
-  height: 90px;
+  width: inherit;
+  height: inherit;
   border-radius: inherit;
 }
 
 header .intro .img-cover {
   position: absolute;
   top: -40px;
-  border: 5px solid #fff;
 }
 
 header .intro .text {
@@ -214,8 +213,8 @@ header .intro .text {
 }
 
 .box-down .top-box .img-cover > img.profile-photo {
-  width: 120px;
-  height: 120px;
+  width: inherit;
+  height: inherit;
   border-radius: inherit;
 }
 
@@ -400,4 +399,3 @@ header .intro .text {
     height: 100%;
   }
 }
-

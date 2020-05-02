@@ -33,8 +33,8 @@ span {
         border-radius: 50%;
     
         &>img.profile-photo {
-            width: $size;
-            height: $size;
+            width: inherit;
+            height: inherit;
             border-radius: inherit;
         }
     }
