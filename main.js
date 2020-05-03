@@ -15,6 +15,7 @@ submit.addEventListener('click', function(e) {
     e.preventDefault();
     fetch('https://judgeportfolio.herokuapp.com/new_message', {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
