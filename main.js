@@ -13,6 +13,7 @@ button.addEventListener('click', function(e) {
 
 submit.addEventListener('click', function(e) {
     e.preventDefault();
+    console.log(email.value, ' ', name.value, ' ', message.value)
     fetch('https://judgeportfolio.herokuapp.com/new_message', {
         method: 'POST',
         mode: 'no-cors',
