@@ -24,5 +24,5 @@ submit.addEventListener('click', function(e) {
             name: name.value,
             message: message.value
         })
-    })
+    });
 })
