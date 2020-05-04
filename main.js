@@ -10,19 +10,19 @@ button.addEventListener('click', function(e) {
     this.classList.toggle('opened')
 })
 
-// submit.addEventListener('click', function(e) {
-//     e.preventDefault();
-//     console.log(email.value, ' ', name.value, ' ', message.value)
-//     fetch('https://judgeportfolio.herokuapp.com/new_message', {
-//         method: 'POST',
-//         mode: 'no-cors',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             email: email.value,
-//             name: document.getElementById('name').value,
-//             message: message.value
-//         })
-//     });
-// })
+submit.addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log(email.value, ' ', name.value, ' ', message.value)
+    fetch('https://judgeportfolio.herokuapp.com/new_message', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email.value,
+            name: document.getElementById('name').value,
+            message: message.value
+        })
+    });
+})
