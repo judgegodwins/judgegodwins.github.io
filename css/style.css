@@ -3,6 +3,37 @@
   background-color: white;
 }
 
+.btn-cool {
+  width: 150px;
+  height: 40px;
+  margin-top: 40px;
+  border: 3px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  transition: 50ms ease-out;
+  outline: none;
+}
+
+.btn-cool:active, .btn-cool:hover {
+  background: white;
+  color: black;
+}
+
+.btn-white {
+  width: 80px;
+  height: 40px;
+  margin-top: 30px;
+  border: 3px solid #fff;
+  background: white;
+  color: black;
+  transition: 100ms ease-out;
+  outline: none;
+}
+
+.btn-white:active {
+  transform: translateY(-5px);
+}
+
 h2.name {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -304,8 +335,9 @@ header .intro .text {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.7);
   z-index: 7;
+  transition: 300ms ease-out;
 }
 
 #result > .container {
@@ -347,7 +379,7 @@ header .intro .text {
 }
 
 #result.close {
-  display: none;
+  visibility: hidden;
 }
 
 * {
@@ -396,14 +428,6 @@ header .intro .text {
   }
   .desktop-cover .container-desk .row .text-div .text > .about {
     color: white;
-  }
-  .desktop-cover .container-desk .row .text-div .hire-btn {
-    width: 150px;
-    height: 40px;
-    margin-top: 40px;
-    border: 3px solid #fff;
-    background-color: #ec4561;
-    color: #fff;
   }
   .desktop-cover .container-desk .row .phone {
     position: absolute;

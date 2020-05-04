@@ -7,14 +7,20 @@ var result = document.getElementById('result')
 var signaler = document.querySelector('.signaler');
 var resIcon = signaler.children[0];
 var reply = document.querySelector('.reply');
+var closer = document.querySelector('.btn-close');
+
 
 button.addEventListener('click', function(e) {
     boxFromDown.classList.toggle('up');
     this.classList.toggle('opened')
 })
 
-result.addEventListener('click', function() {
-    this.classList.add('close');
+closer.addEventListener('click', function() {
+    setTimeout(
+        () => result.classList.add('close'),
+        200
+    );
+
 })
 
 submit.addEventListener('click', function(e) {
@@ -44,18 +50,23 @@ submit.addEventListener('click', function(e) {
                 resIcon.classList.add('fa-check');
                 reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you later`;
             } else {
-                signaler.classList.remove('ok')
-                signaler.classList.add('bad')
-                resIcon.classList.remove('fa-check');
-                resIcon.classList.add('fa-times');
-                reply.innerHTML = "Oops! Something went wrong.";
+                notOkUi();
             }
             email.value = '';
             message.value = '';
             document.getElementById('name').value = '';
+        }).catch(err => {
+            result.classList.remove('close');
+            notOkUi();
         });
     }
-    
+});
 
-})
+function notOkUi() {
+    signaler.classList.remove('ok')
+    signaler.classList.add('bad')
+    resIcon.classList.remove('fa-check');
+    resIcon.classList.add('fa-times');
+    reply.innerHTML = "Oops! Something went wrong.";
+}
 

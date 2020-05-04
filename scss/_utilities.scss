@@ -6,6 +6,37 @@ $themecolor: rgb(236, 69, 97);
     background-color: white;
 }
 
+.btn-cool{
+    width: 150px;
+    height: 40px;
+    margin-top: 40px;
+    border: 3px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    transition: 50ms ease-out; 
+    outline: none;
+
+    &:active, &:hover {
+        background: white;
+        color: black;
+    }
+}
+
+.btn-white {
+    width: 80px;
+    height: 40px;
+    margin-top: 30px;
+    border: 3px solid #fff;
+    background: white;
+    color: black;
+    transition: 100ms ease-out; 
+    outline: none;
+
+    &:active {
+        transform: translateY(-5px);
+    }
+}
+
 h2.name {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;

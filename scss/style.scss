@@ -248,8 +248,9 @@ header {
     top: 0;
     left: 0;
     @include centerize();
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, .7);
     z-index: 7;
+    transition: 300ms ease-out;
 
     & > .container {
         @include centerize();
@@ -284,7 +285,7 @@ header {
     }
 
     &.close {
-        display: none;      
+        visibility: hidden;      
     }
 
 }
