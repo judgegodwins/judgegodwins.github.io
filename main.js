@@ -3,11 +3,18 @@ var boxFromDown = document.querySelector('.box-down');
 var submit = document.querySelector('.submit');
 var email = document.querySelector('#email'),
     message = document.querySelector('#msg');
-var name = document.getElementById('name')
+var result = document.getElementById('result')
+var signaler = document.querySelector('.signaler');
+var resIcon = signaler.children[0];
+var reply = document.querySelector('.reply');
 
 button.addEventListener('click', function(e) {
     boxFromDown.classList.toggle('up');
     this.classList.toggle('opened')
+})
+
+result.addEventListener('click', function() {
+    this.classList.add('close');
 })
 
 submit.addEventListener('click', function(e) {
@@ -15,15 +22,32 @@ submit.addEventListener('click', function(e) {
 
     fetch('https://judgeportfolio.herokuapp.com/new_message', {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
-            'content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
-        referrerPolicy: 'no-refferer',
         body: JSON.stringify({
             email: email.value,
             name: document.getElementById('name').value,
             message: message.value
         })
+    }).then(data => {
+        console.log(data)
+        result.classList.remove('close');
+        if(data !== 'success') {
+            signaler.classList.remove('bad');
+            signaler.classList.add('ok');
+            resIcon.classList.remove('fa-times');
+            resIcon.classList.add('fa-check');
+            reply.innerHTML = "Your message has been delivered, I'll get back to you letter";
+        } else {
+            signaler.classList.remove('ok')
+            signaler.classList.add('bad')
+            resIcon.classList.remove('fa-check');
+            resIcon.classList.add('fa-times');
+            reply.innerHTML = "Oops! Something went wrong.";
+        }
     });
+
 })
+

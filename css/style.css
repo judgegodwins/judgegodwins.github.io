@@ -295,6 +295,61 @@ header .intro .text {
   display: none;
 }
 
+#result {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 7;
+}
+
+#result > .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+}
+
+#result > .container > .signaler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#result > .container > .signaler.ok {
+  background: green;
+}
+
+#result > .container > .signaler.bad {
+  background: red;
+}
+
+#result > .container > .signaler .marker {
+  font-size: 50px;
+  color: white;
+}
+
+#result > .container .reply {
+  color: white;
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#result.close {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
 }
