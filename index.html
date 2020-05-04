@@ -92,14 +92,14 @@
 
         <div class="contact container-pad">
  
-            <form action="" method="post">
+            <form action="https://judgeportfolio.herokuapp.com/new_message" method="post">
                 <h3>Contact Me</h3>
 
-                <input type="text" id="name" class="input" placeholder="Name" required>
+                <input type="text" name="name" id="name" placeholder="Name">
 
-                <input type="text" id="email" class="input" placeholder="Email" required>
+                <input type="text" name="email" id="email" class="input" placeholder="Email" required>
 
-                <textarea type="text" id="msg" placeholder="Message" required></textarea>
+                <textarea type="text" name="message" id="msg" placeholder="Message" required></textarea>
                 <button class="submit" type="submit">Send Now <i class="fas fa-arrow-right"></i></button>
             </form>
         </div>
@@ -153,7 +153,8 @@
             <a href="https://twitter.com/judgegodwins" target="_blank" class="list-action">
                 <div class="icon-div">
                     <div class="icon contact-i">
-                        <i class="fas fa-id-card-alt"></i>                    </div>
+                        <i class="fas fa-id-card-alt"></i>                    
+                    </div>
                 </div>
                 <div class="text">
                     <span>Contact Me</span>
