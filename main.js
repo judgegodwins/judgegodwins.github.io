@@ -18,36 +18,44 @@ result.addEventListener('click', function() {
 })
 
 submit.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    fetch('https://judgeportfolio.herokuapp.com/new_message', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: email.value,
-            name: document.getElementById('name').value,
-            message: message.value
-        })
-    }).then(data => {
-        console.log(data)
-        result.classList.remove('close');
-        if(data !== 'success') {
-            signaler.classList.remove('bad');
-            signaler.classList.add('ok');
-            resIcon.classList.remove('fa-times');
-            resIcon.classList.add('fa-check');
-            reply.innerHTML = "Your message has been delivered, I'll get back to you letter";
-        } else {
-            signaler.classList.remove('ok')
-            signaler.classList.add('bad')
-            resIcon.classList.remove('fa-check');
-            resIcon.classList.add('fa-times');
-            reply.innerHTML = "Oops! Something went wrong.";
-        }
-    });
+    let name = document.getElementById('name').value;
+    if(name == '' || email.value == '' || message.value =='') {
+        return;
+    } else {
+        e.preventDefault();
+        fetch('https://judgeportfolio.herokuapp.com/new_message', {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email.value,
+                name: document.getElementById('name').value,
+                message: message.value
+            })
+        }).then(data => {
+            console.log(data)
+            result.classList.remove('close');
+            if(data !== 'success') {
+                signaler.classList.remove('bad');
+                signaler.classList.add('ok');
+                resIcon.classList.remove('fa-times');
+                resIcon.classList.add('fa-check');
+                reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you later`;
+            } else {
+                signaler.classList.remove('ok')
+                signaler.classList.add('bad')
+                resIcon.classList.remove('fa-check');
+                resIcon.classList.add('fa-times');
+                reply.innerHTML = "Oops! Something went wrong.";
+            }
+            email.value = '';
+            message.value = '';
+            document.getElementById('name').value = '';
+        });
+    }
+    
 
 })
 
