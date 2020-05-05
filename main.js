@@ -48,7 +48,7 @@ submit.addEventListener('click', function(e) {
                 signaler.classList.add('ok');
                 resIcon.classList.remove('fa-times');
                 resIcon.classList.add('fa-check');
-                reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you later`;
+                reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you soon`;
             } else {
                 notOkUi();
             }

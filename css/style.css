@@ -386,8 +386,8 @@ header .intro .text {
   box-sizing: border-box;
 }
 
-@media only screen and (min-width: 760px) {
-  .container {
+@media only screen and (min-width: 1280px) {
+  .container, .custom-button {
     display: none;
   }
   .desktop-cover {
@@ -441,7 +441,7 @@ header .intro .text {
   }
   .desktop-cover .container-desk .row .phone .notifications {
     height: 25px;
-    background: #ec4561;
+    background: transparent;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
@@ -472,9 +472,12 @@ header .intro .text {
     z-index: 10;
     width: 100%;
     height: calc(100% - 25px);
+    border-radius: 0 0 30px 30px;
   }
   .desktop-cover .container-desk .row .phone .main > iframe {
     width: 100%;
     height: 100%;
+    border-radius: inherit;
+    overflow-y: hidden;
   }
 }
