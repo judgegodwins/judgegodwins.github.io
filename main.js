@@ -20,7 +20,6 @@ closer.addEventListener('click', function() {
         () => result.classList.add('close'),
         200
     );
-
 })
 
 submit.addEventListener('click', function(e) {
