@@ -8,7 +8,7 @@ var signaler = document.querySelector('.signaler');
 var resIcon = signaler.children[0];
 var reply = document.querySelector('.reply');
 var closer = document.querySelector('.btn-close');
-
+var container = document.querySelector('.container')
 
 button.addEventListener('click', function(e) {
     boxFromDown.classList.toggle('up');
@@ -69,3 +69,14 @@ function notOkUi() {
     reply.innerHTML = "Oops! Something went wrong.";
 }
 
+if(window.location == window.parent.location) {
+    console.log('in iframe');
+    var startingY;
+    container.ontouchstart = function(e) {
+        startingY = e.touches[0].clientY;
+        console.log(startingY);
+    };
+    container.ontouchmove = function(e) {
+        
+    }
+}

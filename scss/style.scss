@@ -118,6 +118,32 @@ header {
 
 }
 
+.skills {
+    .title-div {
+        // background-color: $themecolor;
+        // padding: 10px;
+        &>h3{
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+            // width: 100px;
+        }
+    }
+    #skill_list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        
+
+        &>li {
+
+            font-size: 17px;
+            font-family: 'Jost', sans-serif;
+            margin: 10px 0;
+            color: rgb(83, 78, 78);
+        }
+    }
+}
+
 .contact {
     width: 100%;
     height: 40vh;
