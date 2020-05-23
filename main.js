@@ -42,7 +42,7 @@ submit.addEventListener('click', function(e) {
         }).then(data => {
             console.log(data)
             result.classList.remove('close');
-            if(data !== 'success') {
+            if(data === 'success') {
                 signaler.classList.remove('bad');
                 signaler.classList.add('ok');
                 resIcon.classList.remove('fa-times');
