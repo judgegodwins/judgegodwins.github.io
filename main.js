@@ -42,7 +42,7 @@ submit.addEventListener('click', function(e) {
         }).then(data => {
             console.log(data)
             result.classList.remove('close');
-            if(data !== 'success') {
+            if(data.result === 'success') {
                 console.log(data);
                 
                 signaler.classList.remove('bad');
