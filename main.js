@@ -39,25 +39,26 @@ submit.addEventListener('click', function(e) {
                 name: document.getElementById('name').value,
                 message: message.value
             })
-        }).then(data => {
-            console.log(data)
-            result.classList.remove('close');
-            if(data.result === 'success') {
-                console.log(data);
-                
-                
-                signaler.classList.remove('bad');
-                signaler.classList.add('ok');
-                resIcon.classList.remove('fa-times');
-                resIcon.classList.add('fa-check');
-                reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you soon`;
-            } else {
-                notOkUi();
-            }
-            email.value = '';
-            message.value = '';
-            document.getElementById('name').value = '';
-        }).catch(err => {
+        }).then(data => data.json())
+            then(res => {
+                console.log(data)
+                result.classList.remove('close');
+                if(res.result === 'success') {
+                    console.log(data);
+                    
+                    
+                    signaler.classList.remove('bad');
+                    signaler.classList.add('ok');
+                    resIcon.classList.remove('fa-times');
+                    resIcon.classList.add('fa-check');
+                    reply.innerHTML = `Hi ${name}, your message has been delivered, I'll get back to you soon`;
+                } else {    
+                    notOkUi();
+                }
+                email.value = '';
+                message.value = '';
+                document.getElementById('name').value = '';
+            }).catch(err => {
             result.classList.remove('close');
             notOkUi();
         });
