@@ -46,7 +46,6 @@ submit.addEventListener('click', function(e) {
                 if(res.result === 'success') {
                     console.log(data);
                     
-                    
                     signaler.classList.remove('bad');
                     signaler.classList.add('ok');
                     resIcon.classList.remove('fa-times');
