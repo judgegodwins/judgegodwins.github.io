@@ -40,7 +40,7 @@ submit.addEventListener('click', function(e) {
                 message: message.value
             })
         }).then(data => data.json())
-            then(res => {
+            .then(res => {
                 console.log(data)
                 result.classList.remove('close');
                 if(res.result === 'success') {
