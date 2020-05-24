@@ -44,7 +44,7 @@ submit.addEventListener('click', function(e) {
                 console.log(data)
                 result.classList.remove('close');
                 if(res.result === 'success') {
-                    console.log(data);
+                    console.log(res);
                     
                     signaler.classList.remove('bad');
                     signaler.classList.add('ok');
