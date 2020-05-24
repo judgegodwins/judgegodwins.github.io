@@ -41,7 +41,7 @@ submit.addEventListener('click', function(e) {
             })
         }).then(data => data.json())
             .then(res => {
-                console.log(data)
+                console.log(res);
                 result.classList.remove('close');
                 if(res.result === 'success') {
                     console.log(res);
